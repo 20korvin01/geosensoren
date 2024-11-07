@@ -1,0 +1,62 @@
+# Uhrzeit einstellen
+Befehl = %R1Q,5007:Year[short],Month,Day,Hour,Minute,Second[all byte]
+Seite  = 108
+
+# Uhrzeit abfragen
+Befehl = %R1Q,5008:
+Seite  = 107
+
+# Lage Info
+Befehl = %R1Q,2026:
+Seite  = 177
+
+# Lage wechseln
+Befehl = %R1Q,9028:PosMode,ATRMode,0
+PosMode: - AUT_NORMAL  = 0     // fast positioning mode
+         - AUT_PRECISE = 1     // exact positioning mode
+                               // note: can distinctly claim more time
+                               // for the positioning
+ATRMode: - AUT_POSITION = 0    // Positioning to the hz- and v-angle
+         - AUT_TARGET   = 1    // Positioning to a target in the
+                               // environment of the hz- and v-angle.
+Seite  = 52
+
+# Drehen mit konstanter Geschwindigkeit
+Befehl = %R1Q,6004:HZ-Speed,V-Speed
+Seite  = 135
+
+# Target suchen
+Befehl = %R1Q,9029:Hz_Area,V_Area,0
+Seite  = 56
+
+# Motor stoppen
+Befehl = %R1Q,6002:Mode[long]
+Seite  = 134
+
+# Distanzmessung
+Befehl = %R1Q,2008:Command[long],Mode[long]
+Seite  = 157
+
+# Koordinaten von gemessenem Punkt Polar
+Befehl = %R1Q,2082:WaitTime[long],Mode[long]
+Seite  = 144
+
+# Koordinaten von gemessenem Punkt Kartesisch
+Befehl = %R1Q,2116:WaitTime[long],eProg[long]
+Seite  = 184
+
+# Standpunktkoordinate bekommen
+Befehl = %R1Q,2009:
+Seite  = 171
+
+# Standpunktkoordinate setzen
+Befehl = %R1Q,2010:E0[double],N0[double],H0[double],Hi[double]
+Seite  = 172
+
+# Laserpointer
+Befehl = %R1Q,1004:eLaser[long]  (0/1)
+Seite  = 114
+
+# zu Punkt drehen
+Befehl = %R1Q,9027:Hz,V,PosMode,ATRMode,0
+Seite  = 49
