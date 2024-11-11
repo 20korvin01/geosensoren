@@ -12,7 +12,7 @@ def request(port: str, command: str) -> bytes:
     Sends a command to totalstation and returns response.
     """
     with serial.Serial(port) as s:
-        s.baudrate = 115200
+        s.baudrate = 19200
         s.bytesite = serial.EIGHTBITS
         s.parity = serial.PARITY_NONE
         s.timeout = None
@@ -310,10 +310,11 @@ def fun(port: str) -> None:
 
 
 if __name__ == "__main__":
-    port = "COM6"
+    port = "COM3"
 
-    set_ATR(port, 1)
-    find_start(port, "Epoche0_1001-4.csv")
+    laserpointer(port, 1)
+    switch_face(port)
+    # find_start(port, "Epoche0_1001-4.csv")
     # run(port, "Epoche0_1001-3.csv", "measurements.csv", 30, 2)
     # print(speed(port, 0.5, 0.5))
     # time.sleep(2)

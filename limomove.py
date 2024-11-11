@@ -14,11 +14,11 @@ limo.EnableCommand()         # Steuerung
 #         num-=1
 
 
-try:
-    # limo.SetMotionCommand(linear_vel=1,angular_vel=0) # vorwärts
-    # time.sleep(0.5)
-    limo.SetMotionCommand(linear_vel=0.1,angular_vel=500) # vorwärts
-    # time.sleep(10)
+# try:
+#     # limo.SetMotionCommand(linear_vel=1,angular_vel=0) # vorwärts
+#     # time.sleep(0.5)
+#     limo.SetMotionCommand(linear_vel=0.1,angular_vel=500) # vorwärts
+#     # time.sleep(10)
 
-except KeyboardInterrupt:
-    limo.SetMotionCommand(linear_vel=0)
+# except KeyboardInterrupt:
+#     limo.SetMotionCommand(linear_vel=0)
